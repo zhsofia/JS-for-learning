@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1 id="title"></h1>
+<p id="fast"></p>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+
+    for (let i = 1; i < 10; i++) {
+            $.ajax('https://orthocal.info/api/oca/2019/10/'+i+'/').done(function (data) {
+                $('#title').text(data.titles[0]);
+                $('#fast').text(data.fast_level_desc);
+            });
+    }
+</script>
+</body>
+</html>
